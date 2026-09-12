@@ -11,12 +11,28 @@ class Settings:
     @property
     def NAVER_CLIENT_ID(self) -> str:
         load_dotenv(dotenv_path=ENV_PATH, override=True)
-        return os.getenv("NAVER_CLIENT_ID", "").strip()
+        val = os.getenv("NAVER_CLIENT_ID", "").strip()
+        if not val:
+            try:
+                import streamlit as st
+                if "NAVER_CLIENT_ID" in st.secrets:
+                    val = str(st.secrets["NAVER_CLIENT_ID"]).strip()
+            except Exception:
+                pass
+        return val
 
     @property
     def NAVER_CLIENT_SECRET(self) -> str:
         load_dotenv(dotenv_path=ENV_PATH, override=True)
-        return os.getenv("NAVER_CLIENT_SECRET", "").strip()
+        val = os.getenv("NAVER_CLIENT_SECRET", "").strip()
+        if not val:
+            try:
+                import streamlit as st
+                if "NAVER_CLIENT_SECRET" in st.secrets:
+                    val = str(st.secrets["NAVER_CLIENT_SECRET"]).strip()
+            except Exception:
+                pass
+        return val
 
     # NAVER API HUB (네이버 클라우드 플랫폼 NCP) 엔드포인트
     NCP_API_HUB_BASE: str = "https://naverapihub.apigw.ntruss.com"
