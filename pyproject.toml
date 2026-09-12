@@ -1,0 +1,16 @@
+[project]
+name = "naver-search-dashboard"
+version = "0.1.0"
+description = "Naver Market Insight EDA Dashboard using Naver Search & DataLab APIs"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit>=1.38.0",
+    "pandas>=2.2.0",
+    "plotly>=5.24.0",
+    "requests>=2.32.0",
+    "python-dotenv>=1.0.1",
+    "wordcloud>=1.9.3",
+    "matplotlib>=3.9.0",
+    "openpyxl>=3.1.5",
+]

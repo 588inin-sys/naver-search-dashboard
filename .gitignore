@@ -1,0 +1,53 @@
+# 환경변수 및 비밀 키 (절대 커밋 금지)
+.env
+.env.*
+*.env
+*.env.local
+!.env.example
+
+# 가상환경
+.venv/
+venv/
+ENV/
+env/
+
+# 파이썬 빌드/패키징 및 배포 파일
+*.egg-info/
+*.egg
+build/
+dist/
+develop-eggs/
+eggs/
+parts/
+bin/
+var/
+sdist/
+wheels/
+
+# 파이썬 캐시 및 컴파일 파일
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Streamlit 캐시 및 설정
+.streamlit/secrets.toml
+
+# IDE 및 에디터 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 로그 및 임시 파일
+*.log
+scratch/
+
